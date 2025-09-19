@@ -94,7 +94,7 @@ export default function LoginPage() {
 		setIsLoading(true)
 
 		try {
-			const response = await fetch('http://192.168.10.41:9000/api/token/', {
+			const response = await fetch('https://reklamaproject.onrender.com/api/', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
