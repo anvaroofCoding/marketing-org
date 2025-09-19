@@ -4,11 +4,10 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 
-// __dirname ekvivalentini olish
+// __dirname ekvivalenti
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// https://vite.dev/config/
 export default defineConfig({
 	plugins: [react(), tailwindcss()],
 	resolve: {
@@ -19,5 +18,13 @@ export default defineConfig({
 	server: {
 		host: '0.0.0.0',
 		port: 5173,
+	},
+	build: {
+		outDir: 'dist', // Vercel uchun build chiqishi shu papkada bo'ladi
+		rollupOptions: {
+			output: {
+				manualChunks: undefined, // kerak bo‘lsa dynamic import ishlatish mumkin
+			},
+		},
 	},
 })
