@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const api = createApi({
 	reducerPath: 'api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'https://reklamaproject.onrender.com/api/',
+		baseUrl: 'https://reklamaproject.onrender.com/api',
 		credentials: 'include', // cookie ishlatadi
 		prepareHeaders: headers => {
 			const token = localStorage.getItem('token_marketing')
